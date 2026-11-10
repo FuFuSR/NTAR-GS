@@ -77,3 +77,10 @@ See this article for quantitative comparison and visualization results. Here are
 ## License
 
 The original NTAR-GS source code is released under the [MIT License](LICENSE). 
+
+## Acknowledgments
+
+We thank the authors of [GaussianImage](https://github.com/XingtongGe/gsplat) and [GaussianSR](https://github.com/tljxyys/GaussianSR) for their excellent open-source contributions!
+
+
+
