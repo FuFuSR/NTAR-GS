@@ -15,15 +15,13 @@ Jing Chen
 
 ## Overview
 
-Remote sensing imagery exhibits spatially heterogeneous structures, ranging from relatively homogeneous regions to directional linear structures and complex object boundaries. NTAR-GS models these differences using an explicit, continuous 2D Gaussian representation and progressive reconstruction.
+We propose NTAR-GS, a novel model for continuous-scale remote sensing image super-resolution (SR) based on 2D Gaussian Splatting (2D GS). It unifies adaptation to spatial structures and cross-level generative dependencies within an explicit continuous Gaussian representation. The model uses a nonstationary topological prior (NTP) to constrain the organization of Gaussian primitives, recursively generates child Gaussians through parent-conditioned autoregressive Gaussian generation (PCAG), and incorporates hierarchical residual Gaussian Splatting (HRGS) to progressively recover local details by building on inherited structures.
 
-The method consists of three components:
+Experimental results show that NTAR-GS exhibits advantages over state-of-the-art SR methods in both quantitative evaluation and visual reconstruction quality, while demonstrating good generalization in scale extrapolation and real-world image tests. Compared with other SR methods based on Gaussian representations, the proposed model achieves an average PSNR gain exceeding 0.15 dB and an inference speedup of up to 23.78×.
 
-- **Nonstationary Topological Prior (NTP):** constructs spatially varying structure-aware guidance for Gaussian organization.
-- **Parent-Conditioned Autoregressive Gaussian Generation (PCAG):** progressively refines child Gaussians conditioned on their parent states and local topology.
-- **Hierarchical Residual Gaussian Splatting (HRGS):** combines coarse content reconstruction with finer residual contributions for image synthesis.
-
-![NTAR-GS architecture](assets/NTAR-GS.png)
+<p align="center">
+  <img src="assets/NTAR-GS.png" alt="Overall architecture of NTAR-GS" width="100%">
+</p>
 
 ## Repository Structure
 
