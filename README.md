@@ -68,7 +68,7 @@ python test.py --config configs/test/test.yaml --model NTAR-GS.pth --scales 4
 python train.py --config configs/train/train.yaml --name NTAR-GS-train
 ```
 
-## Results
+## Visual Examples
 
 See this article for quantitative comparison and visualization results. Here are visual examples.
 
