@@ -53,15 +53,12 @@ python inference.py --input examples/input/playground_279.png --model NTAR-GS.pt
 ```
 ### Test
 
-Set the dataset and split file paths in `configs/test/test.yaml`, then run the following command from the project root directory:
+Set the dataset and split file paths in `configs/test/test.yaml`, then run the following command from the project root directory. After testing, the average PSNR and SSIM on the Y channel will be printed in the terminal. For multi-scale evaluation, replace `--scales 4` with `--scales 2 2.75 3 8`.
 
 ```bash
 # Test AID at x4
-python test.py --config configs/test/test.yaml --model NTAR-GS.pth
+python test.py --config configs/test/test.yaml --model NTAR-GS.pth --scales 4
 ```
-
-The average PSNR and SSIM on the Y channel will be printed in the terminal.
-
 
 ## Training
 
