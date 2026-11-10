@@ -70,7 +70,7 @@ python train.py --config configs/train/train.yaml --name NTAR-GS-train
 
 ## Results
 
-Please refer to the paper for quantitative comparisons and visual results. **[TO UPDATE]** Add the verified final table entries, the exact checkpoint used for each evaluation, and the paper link when available.
+See this article for quantitative comparison and visualization results. Here are visual examples.
 
 ## Citation
 
