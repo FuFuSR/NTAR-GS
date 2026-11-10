@@ -58,35 +58,6 @@ split_key: train
 模拟 SR 实验中的 LR 影像由代码在线进行 Bicubic 下采样生成。
 其他数据集的路径和测试子集在相应测试配置中指定。
 
-### AID
-
-The included `datasets/AID_split.json` defines **8,000 training / 1,000 validation / 1,000 test** images. The `image-folder` loader supports the `split_file` and `split_key` options and expects the original relative paths found in the split file.
-
-Example directory layout:
-
-```text
-data/
-└── AID/
-    ├── Park/
-    │   ├── park_1.jpg
-    │   └── ...
-    └── ...
-```
-
-Update both training and test YAML files to point to your local data directory:
-
-```yaml
-root_path: ./data/AID
-split_file: ./datasets/AID_split.json
-split_key: train  # use val or test for the corresponding split
-```
-
-For the simulated continuous-scale setting, LR images are constructed from HR references using bicubic downsampling by the dataset wrapper.
-
-> **[TO UPDATE]** The uploaded `configs/train/train-base-4.yaml` and `configs/test/test-base-4.yaml` still reference `./AID` and `./AID_split.json`. The latter does not match the split-file location in the supplied ZIP. Correct the YAML paths before running the commands below.
-
-> **[TO UPDATE]** Add tested configuration files for DIOR, NWPU-RESISC45 and UC Merced if those evaluations will be supported by the public release. The current uploaded ZIP only includes an AID-oriented test configuration.
-
 ## Pretrained Models
 
 The final NTAR-GS checkpoint and its associated training configuration will be made available here:
