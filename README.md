@@ -1,11 +1,38 @@
 # NTAR-GS
 
-**NTAR-GS: Nonstationary Topological Prior-Conditioned Autoregressive Gaussian Splatting for Continuous-Scale Remote Sensing Image Super-Resolution**
 
-> Research implementation of NTAR-GS for continuous-scale remote sensing image super-resolution.  
-> **Release status:** This README is a pre-release draft. Items marked **[TO UPDATE]** must be completed and tested before the repository is made public.
+<div align="center">
 
-<!-- [TO UPDATE] Add the final paper link and bibliographic information when available. -->
+<h1>
+NTAR-GS: Nonstationary Topological Prior-Conditioned Autoregressive Gaussian Splatting for Continuous-Scale Remote Sensing Image Super-Resolution
+</h1>
+
+<p>
+Jiao Fu<sup>1,2</sup> &nbsp;&nbsp;
+Yuanping Xia<sup>1,2,*</sup> &nbsp;&nbsp;
+Jing Chen<sup>3,*</sup>
+</p>
+
+<p>
+<sup>1</sup> School of Surveying and Geoinformation Engineering, East China University of Technology, Nanchang 330013, China
+</p>
+
+<p>
+<sup>2</sup> National Key Laboratory of Uranium Resources Exploration-Mining and Nuclear Remote Sensing, East China University of Technology, Nanchang 330013, China
+</p>
+
+<p>
+<sup>3</sup> State Key Laboratory of Information Engineering in Surveying, Mapping and Remote Sensing, Wuhan University, Wuhan 430072, Hubei, China
+</p>
+
+<p>
+<sup>*</sup> Corresponding authors:
+<a href="mailto:ypxia@ecut.edu.cn">Yuanping Xia</a>,
+<a href="mailto:jchen@whu.edu.cn">Jing Chen</a>
+</p>
+
+</div>
+
 
 ## Overview
 
