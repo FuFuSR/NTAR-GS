@@ -76,4 +76,4 @@ See this article for quantitative comparison and visualization results. Here are
 
 ## License
 
-The original NTAR-GS source code is released under the [MIT License](LICENSE). Third-party components and datasets remain subject to their respective licenses.
+The original NTAR-GS source code is released under the [MIT License](LICENSE). 
