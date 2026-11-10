@@ -1,6 +1,3 @@
-# NTAR-GS
-
-
 <div align="center">
 
 <h1>
