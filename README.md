@@ -42,10 +42,7 @@ We use AID, DIOR, and NWPU-RESISC45 for simulated SR experiments, treating the o
 
 ## Usage
 ### Pretrained Model
-
 Download the pretrained NTAR-GS model (trained on AID) from [Baidu Netdisk](https://pan.baidu.com/s/1gdT128vMcv8xtSJSA16pXA?pwd=68sc) and place `NTAR-GS.pth` in the project root directory.
-
-Extraction code: `68sc`
 
 **EDSR encoder initialization:** The supplied training configuration uses the EDSR baseline with 16 residual blocks, 64 features, `scale: 4`, and `no_upsampling: true`. For fresh training, `models/edsr.py` attempts to load `models/weights/edsr_baseline_x4-6b446fab.pt`. A separate link and proper attribution should be provided if this pretrained initialization is required by the released training recipe. The presence of `scale: 4` for the encoder initialization does **not** restrict the NTAR-GS reconstruction scale to ×4.
 
