@@ -51,6 +51,18 @@ Run the following command from the project root directory to perform super-resol
 ```bash
 python inference.py --input examples/input/playground_279.png --model NTAR-GS.pth --scale 4 --output examples/output/playground_279_x4.png
 ```
+### Test
+
+Set the dataset and split file paths in `configs/test/test.yaml`, then run the following command from the project root directory:
+
+```bash
+# Test AID at x4
+python test.py --config configs/test/test.yaml --model NTAR-GS.pth --scales 4
+```
+
+The average PSNR and SSIM on the Y channel will be printed in the terminal. For multi-scale evaluation, replace `--scales 4` with `--scales 2 2.75 3 8`.
+
+
 ## Training
 
 The updated `train.py` supplied separately supports cosine annealing via `CosineAnnealingLR`. Once the **final, actually used** training YAML has been restored and the dataset paths are correct, launch training using:
