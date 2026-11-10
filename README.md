@@ -35,9 +35,9 @@ We use AID, DIOR, and NWPU-RESISC45 for simulated SR experiments, treating the o
 
 | Dataset | Usage | Number of images |
 | --- | --- | --- |
-| [AID](https://captain-whu.github.io/AID/) | Simulated experiments: training / validation / testing | 8,000 / 1,000 / 1,000 |
-| [DIOR](https://gcheng-nwpu.github.io/#Datasets) | Simulated experiments: cross-dataset testing | 1,000 |
-| [NWPU-RESISC45](https://gcheng-nwpu.github.io/#Datasets) | Simulated experiments: cross-dataset testing | 900 |
+| [AID](https://captain-whu.github.io/AID/) | train / val / test | 8,000 / 1,000 / 1,000 |
+| [DIOR](https://gcheng-nwpu.github.io/#Datasets) | cross-dataset test | 1,000 |
+| [NWPU-RESISC45](https://gcheng-nwpu.github.io/#Datasets) | cross-dataset test | 900 |
 | [UC Merced](https://vision.ucmerced.edu/datasets/) | Real-world no-reference evaluation | 420 |
 
 ## Pretrained Models
