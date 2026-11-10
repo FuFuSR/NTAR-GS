@@ -5,28 +5,11 @@ NTAR-GS: Nonstationary Topological Prior-Conditioned Autoregressive Gaussian Spl
 </h1>
 
 <p>
-Jiao Fu<sup>1,2</sup> &nbsp;&nbsp;
-Yuanping Xia<sup>1,2,*</sup> &nbsp;&nbsp;
-Jing Chen<sup>3,*</sup>
+Jiao Fu<sup> ;
+Yuanping Xia<sup> ;
+Jing Chen<sup> 
 </p>
 
-<p>
-<sup>1</sup> School of Surveying and Geoinformation Engineering, East China University of Technology, Nanchang 330013, China
-</p>
-
-<p>
-<sup>2</sup> National Key Laboratory of Uranium Resources Exploration-Mining and Nuclear Remote Sensing, East China University of Technology, Nanchang 330013, China
-</p>
-
-<p>
-<sup>3</sup> State Key Laboratory of Information Engineering in Surveying, Mapping and Remote Sensing, Wuhan University, Wuhan 430072, Hubei, China
-</p>
-
-<p>
-<sup>*</sup> Corresponding authors:
-<a href="mailto:ypxia@ecut.edu.cn">Yuanping Xia</a>,
-<a href="mailto:jchen@whu.edu.cn">Jing Chen</a>
-</p>
 
 </div>
 
