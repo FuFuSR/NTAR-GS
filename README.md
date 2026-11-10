@@ -37,7 +37,6 @@ git clone https://github.com/XingtongGe/gsplat.git
 cd gsplat
 git checkout bf697c8
 pip install -e ".[dev]" --no-build-isolation
-cd ..
 ```
 
 ## Datasets
