@@ -21,12 +21,12 @@ We propose NTAR-GS, a novel model for continuous-scale remote sensing image supe
 Other dependencies:
 
 ```bash
-pip install -r requirements.txt --no-build-isolation
+pip install -r requirements.txt
 
 git clone https://github.com/XingtongGe/gsplat.git
 cd gsplat
 git checkout bf697c8
-pip install -e ".[dev]" --no-build-isolation
+pip install -e ".[dev]"
 ```
 
 ## Datasets
