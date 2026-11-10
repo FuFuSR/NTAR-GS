@@ -71,7 +71,9 @@ python train.py --config configs/train/train.yaml --name NTAR-GS-train
 ## Results
 See this article for quantitative comparison and visualization results. Here are visual examples.
 ### Visual Examples
-
+<p align="center">
+  <img src="assets/vis1.png" alt="Visual comparison of NTAR-GS" width="100%">
+</p>
 
 ## Citation
 
