@@ -44,54 +44,13 @@ We use AID, DIOR, and NWPU-RESISC45 for simulated SR experiments, treating the o
 ### Pretrained Model
 Download the pretrained NTAR-GS model (trained on AID) from [Baidu Netdisk](https://pan.baidu.com/s/1gdT128vMcv8xtSJSA16pXA?pwd=68sc) and place `NTAR-GS.pth` in the project root directory.
 
-**EDSR encoder initialization:** The supplied training configuration uses the EDSR baseline with 16 residual blocks, 64 features, `scale: 4`, and `no_upsampling: true`. For fresh training, `models/edsr.py` attempts to load `models/weights/edsr_baseline_x4-6b446fab.pt`. A separate link and proper attribution should be provided if this pretrained initialization is required by the released training recipe. The presence of `scale: 4` for the encoder initialization does **not** restrict the NTAR-GS reconstruction scale to ×4.
+### Inference
 
-## Evaluation
-
-`test.py` runs full-image evaluation and reports **PSNR-Y** and **SSIM-Y**. By default, the metric functions accept RGB tensors in `[0,1]` and support 8-bit quantization, MATLAB-style Y conversion, mod-cropping, and optional scale-aware border cropping as configured in the test YAML.
-
-After the dataset paths and checkpoint have been set correctly, an AID ×4 evaluation can be launched using:
+Run the following command from the project root directory to perform super-resolution on a single image:
 
 ```bash
-python test.py \
-  --config configs/test/test-base-4.yaml \
-  --model checkpoints/epoch-best-test.pth \
-  --scales 4 \
-  --output results/aid_x4 \
-  --max_save 0 \
-  --gpu 0
+python inference.py --input examples/input/playground_279.png --model NTAR-GS.pth --scale 4 --output examples/output/playground_279_x4.png
 ```
-
-To evaluate several scales with the same checkpoint:
-
-```bash
-python test.py \
-  --config configs/test/test-base-4.yaml \
-  --model checkpoints/epoch-best-test.pth \
-  --scales 2 2.5 3 4 \
-  --output results/aid_multiscale \
-  --max_save 0 \
-  --gpu 0
-```
-
-The script writes per-image and scale-level metrics as CSV files, including `multiscale_summary.csv`. Set `--max_save` to a positive number to save a limited number of LR/SR/GT images; omitting it saves all images.
-
-## Single-Image Inference
-
-Sample low-resolution images can be placed in `examples/input/`. A final inference command will use the following argument names, as supported by `inference.py`:
-
-```bash
-# [TO ENABLE AFTER FIXING inference.py]
-python inference.py \
-  --input examples/input/example_01.png \
-  --model checkpoints/epoch-best-test.pth \
-  --scale 4,4 \
-  --output examples/output/example_01_x4.png \
-  --gpu 0
-```
-
-**Important — [TO FIX BEFORE RELEASE]:** The current uploaded `inference.py` passes the input image to the model without the test-time `[-1,1]` normalization and saves the output without the matching denormalization; it also parses the two scale values as integers. These must be aligned with `test.py` before the example is advertised as working and before non-integer scales can be used from the command line. The output directory must also exist or be created by the script.
-
 ## Training
 
 The updated `train.py` supplied separately supports cosine annealing via `CosineAnnealingLR`. Once the **final, actually used** training YAML has been restored and the dataset paths are correct, launch training using:
