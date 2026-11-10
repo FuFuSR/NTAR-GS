@@ -57,10 +57,10 @@ Set the dataset and split file paths in `configs/test/test.yaml`, then run the f
 
 ```bash
 # Test AID at x4
-python test.py --config configs/test/test.yaml --model NTAR-GS.pth --scales 4
+python test.py --config configs/test/test.yaml --model NTAR-GS.pth
 ```
 
-The average PSNR and SSIM on the Y channel will be printed in the terminal. For multi-scale evaluation, replace `--scales 4` with `--scales 2 2.75 3 8`.
+The average PSNR and SSIM on the Y channel will be printed in the terminal.
 
 
 ## Training
