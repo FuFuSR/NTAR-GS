@@ -1,12 +1,7 @@
+# NTAR-GS: Nonstationary Topological Prior-Conditioned Autoregressive Gaussian Splatting for Continuous-Scale Remote Sensing Image Super-Resolution
 
-<div align="center">
-
-<h1>NTAR-GS: Nonstationary Topological Prior-Conditioned Autoregressive Gaussian Splatting for Continuous-Scale Remote Sensing Image Super-Resolution</h1>
-
-
-</div>
-
-
+- Authors: Jiao Fu, Yuanping Xia<sup>*</sup>, and Jing Chen<sup>*</sup>
+- East China University of Technology and Wuhan University
 
 ## Overview
 
