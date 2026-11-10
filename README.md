@@ -42,7 +42,9 @@ We use AID, DIOR, and NWPU-RESISC45 for simulated SR experiments, treating the o
 
 ## Usage
 ### Pretrained Model
-Download the pretrained NTAR-GS model (trained on AID) from [Baidu Netdisk](https://pan.baidu.com/s/1gdT128vMcv8xtSJSA16pXA?pwd=68sc) and place `NTAR-GS.pth` in the project root directory.
+### Pretrained Model
+
+Download the pretrained model [NTAR-GS.pth](https://pan.baidu.com/s/1gdT128vMcv8xtSJSA16pXA?pwd=68sc) and place it in the project root directory.
 
 ### Inference
 
