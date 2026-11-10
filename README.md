@@ -31,32 +31,14 @@ pip install -e ".[dev]"
 
 ## Dataset Preparation
 
-请下载以下数据集：
+我们使用 AID、DIOR 和 NWPU-RESISC45 进行模拟实验，以原始影像作为 HR 参考，通过 Bicubic 下采样构建 LR/HR 影像对。UC Merced 用于真实世界实验，直接以原始影像作为输入，不施加任何模拟退化。请通过下方官方链接下载原始影像，也可使用自己的影像进行推理。
 
-| 数据集 | 本文使用方式 |
-| --- | --- |
-| [AID](https://captain-whu.github.io/AID/) | 训练、验证和测试，分别使用 8,000、1,000 和 1,000 幅影像 |
-| [DIOR](https://gcheng-nwpu.github.io/#Datasets) | 跨数据集测试，使用 1,000 幅影像 |
-| [NWPU-RESISC45](https://gcheng-nwpu.github.io/#Datasets) | 跨数据集测试，使用 900 幅影像 |
-| [UC Merced](https://vision.ucmerced.edu/datasets/) | 真实影像无参考测试，使用 420 幅影像 |
-
-将 AID 放在项目根目录的 `AID/` 下，保留原始类别子目录，
-并将数据划分文件放在 `datasets/AID_split.json`。
-例如，图片路径为 `AID/Park/park_1.jpg`。
-
-在对应 YAML 配置的 `dataset.args` 中设置：
-
-```yaml
-root_path: ./AID
-split_file: ./datasets/AID_split.json
-split_key: train
-```
-
-训练、验证和测试分别使用 `train`、`val` 和 `test`。
-如果数据存放在其他位置，请修改 `root_path`。
-
-模拟 SR 实验中的 LR 影像由代码在线进行 Bicubic 下采样生成。
-其他数据集的路径和测试子集在相应测试配置中指定。
+| 数据集 | 实验用途 | 使用数量 |
+| --- | --- | --- |
+| [AID](https://captain-whu.github.io/AID/) | 模拟实验：训练 / 验证 / 测试 | 8,000 / 1,000 / 1,000 |
+| [DIOR](https://gcheng-nwpu.github.io/#Datasets) | 模拟实验：跨数据集测试 | 1,000 |
+| [NWPU-RESISC45](https://gcheng-nwpu.github.io/#Datasets) | 模拟实验：跨数据集测试 | 900 |
+| [UC Merced](https://vision.ucmerced.edu/datasets/) | 真实影像无参考测试 | 420 |
 
 ## Pretrained Models
 
