@@ -42,7 +42,6 @@ We use AID, DIOR, and NWPU-RESISC45 for simulated SR experiments, treating the o
 
 ## Usage
 ### Pretrained Model
-### Pretrained Model
 
 Download the pretrained model [NTAR-GS.pth](https://pan.baidu.com/s/1gdT128vMcv8xtSJSA16pXA?pwd=68sc) and place it in the project root directory.
 
@@ -75,23 +74,6 @@ See this article for quantitative comparison and visualization results. Here are
   <img src="assets/vis1.png" alt="Visual comparison of NTAR-GS" width="100%">
 </p>
 
-## Citation
-
-If you use NTAR-GS in your research, please cite the paper once its bibliographic information is available.
-
-```bibtex
-% [TO UPDATE AFTER PUBLICATION]
-% Add the verified BibTeX record for the NTAR-GS paper here.
-```
-
-## Acknowledgements
-
-This code builds on publicly available research implementations and tools, including:
-
-- [ContinuousSR](https://github.com/peylnog/ContinuousSR) — upstream project context; verify and preserve the applicable license and original attribution for any reused source code.
-- [GaussianImage `gsplat`](https://github.com/XingtongGe/gsplat) — third-party 2D Gaussian projection and rasterization implementation (Apache-2.0).
-- EDSR and other incorporated model components — add the specific upstream links and licenses where corresponding source code or weights have been reused.
-
 ## License
 
-**[TO UPDATE]** The final repository license has not yet been selected. Check all reused code and weight licenses before adding a repository-wide `LICENSE` file or claiming that the entire repository is released under a particular license.
+The original NTAR-GS source code is released under the [MIT License](LICENSE). Third-party components and datasets remain subject to their respective licenses.
