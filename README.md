@@ -23,44 +23,23 @@ We propose NTAR-GS, a novel model for continuous-scale remote sensing image supe
 
 ## Dependencies and Installation
 
-### Environment
-
 - Python 3.9
-- PyTorch 1.13.1
-- torchvision 0.14.1
+- PyTorch 1.13.1 / torchvision 0.14.1
 - CUDA 11.7
+- BasicSR 1.3.4.9
 
-编译 gsplat 需要本机安装 CUDA 工具包（包含 nvcc）及兼容的 C++ 编译器。
-
-```bash
-git clone https://github.com/FuFuSR/NTAR-GS.git
-cd NTAR-GS
-```
-
-安装 PyTorch 和项目依赖：
+Other dependencies:
 
 ```bash
-python -m pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 \
-    --extra-index-url https://download.pytorch.org/whl/cu117
+pip install -r requirements.txt --no-build-isolation
 
-python -m pip install -r requirements.txt \
-    --extra-index-url https://download.pytorch.org/whl/cu117 \
-    --no-build-isolation
-```
-
-安装第三方 2D 高斯光栅化库 gsplat：
-
-```bash
-cd ..
 git clone https://github.com/XingtongGe/gsplat.git
 cd gsplat
-git checkout bf697c8cb0f98627e4a1abed8144cae953a667f7
-git submodule update --init --recursive
-python -m pip install -e ".[dev]" --no-build-isolation
-cd ../NTAR-GS
+git checkout bf697c8
+pip install -e ".[dev]" --no-build-isolation
+cd ..
 ```
 
-本项目使用 XingtongGe/gsplat 的上述固定版本。
 ## Datasets
 
 The experiments use **AID**, **DIOR**, **NWPU-RESISC45**, and **UC Merced**. Please obtain the datasets from their official providers and respect their respective terms of use. Dataset images are not distributed in this repository.
