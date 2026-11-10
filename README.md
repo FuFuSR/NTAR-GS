@@ -21,76 +21,59 @@ We propose NTAR-GS, a novel model for continuous-scale remote sensing image supe
   <img src="assets/NTAR-GS.png" alt="Overall architecture of NTAR-GS" width="100%">
 </p>
 
-## Repository Structure
-
-```text
-NTAR-GS/
-├── assets/                 # Architecture / visualizations
-├── configs/
-│   ├── train/              # Training configuration(s)
-│   └── test/               # Evaluation configuration(s)
-├── datasets/               # Dataset loaders, wrappers, and AID split
-├── examples/               # [TO ADD] Sample input images
-│   └── input/
-├── metrics/
-│   ├── __init__.py
-│   └── sr_metrics.py        # PSNR and SSIM
-├── models/                 # NTAR-GS architecture and encoders
-├── scripts/                # Utility scripts
-├── train.py                # Training
-├── test.py                 # Dataset evaluation
-├── inference.py            # Single-image inference
-├── requirements.txt        # Python dependencies
-└── README.md
-```
-
-The Gaussian rasterizer (`gsplat`) is installed separately and is **not** included in this repository.
-
-## Installation
+## Dependencies and Installation
 
 ### Environment
 
-The development environment used for the provided code was:
+- Linux
+- Python 3.9
+- PyTorch 1.13.1
+- torchvision 0.14.1
+- CUDA 11.7
 
-- Python **3.9.25**
-- PyTorch **1.13.1+cu117**
-- CUDA runtime used by PyTorch **11.7**
+编译 gsplat 需要本机安装 CUDA 工具包（包含 nvcc）及兼容的 C++ 编译器。
 
-A CUDA-capable GPU and a compatible CUDA compilation toolchain are required for the third-party `gsplat` extension. Other versions have not been validated with this release.
+### Installation
+
+创建并激活 Conda 环境：
 
 ```bash
 conda create -n ntargs python=3.9 -y
 conda activate ntargs
-
-# Install the matching PyTorch/CUDA build.
-pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 \
-  --extra-index-url https://download.pytorch.org/whl/cu117
-
-# Install the remaining requirements after requirements.txt is finalized.
-pip install -r requirements.txt \
-  --extra-index-url https://download.pytorch.org/whl/cu117
+python -m pip install "setuptools<70" wheel
 ```
 
-> **[TO UPDATE]** The currently collected `requirements.txt` is an environment snapshot, not a clean-environment-tested dependency list. Prune and validate it before publishing this installation section.
-
-### Install the 2D Gaussian rasterizer
-
-NTAR-GS calls the `project_gaussians_2d` and `rasterize_gaussians_sum` interfaces from the GaussianImage `gsplat` implementation. Use the pinned upstream revision rather than assuming that the latest package called `gsplat` has the same API:
+下载 NTAR-GS：
 
 ```bash
-# Run from the parent directory of the NTAR-GS repository.
+git clone https://github.com/FuFuSR/NTAR-GS.git
+cd NTAR-GS
+```
+
+安装 PyTorch 和项目依赖：
+
+```bash
+python -m pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 \
+    --extra-index-url https://download.pytorch.org/whl/cu117
+
+python -m pip install -r requirements.txt \
+    --extra-index-url https://download.pytorch.org/whl/cu117 \
+    --no-build-isolation
+```
+
+安装第三方 2D 高斯光栅化库 gsplat：
+
+```bash
+cd ..
 git clone https://github.com/XingtongGe/gsplat.git
 cd gsplat
 git checkout bf697c8cb0f98627e4a1abed8144cae953a667f7
 git submodule update --init --recursive
-pip install -e ".[dev]"
+python -m pip install -e ".[dev]" --no-build-isolation
 cd ../NTAR-GS
-
-python -c "from gsplat.project_gaussians_2d import project_gaussians_2d; from gsplat.rasterize_sum import rasterize_gaussians_sum; print('gsplat import OK')"
 ```
 
-> Successfully importing the functions verifies the Python API only. A complete end-to-end GPU inference run is still needed to verify the CUDA build.
-
+本项目使用 XingtongGe/gsplat 的上述固定版本。
 ## Datasets
 
 The experiments use **AID**, **DIOR**, **NWPU-RESISC45**, and **UC Merced**. Please obtain the datasets from their official providers and respect their respective terms of use. Dataset images are not distributed in this repository.
