@@ -40,15 +40,12 @@ We use AID, DIOR, and NWPU-RESISC45 for simulated SR experiments, treating the o
 | [NWPU-RESISC45](https://gcheng-nwpu.github.io/#Datasets) | cross-dataset test | 900 |
 | [UC Merced](https://vision.ucmerced.edu/datasets/) | Real-world no-reference evaluation | 420 |
 
-## Pretrained Models
+## Usage
+### Pretrained Model
 
-The final NTAR-GS checkpoint and its associated training configuration will be made available here:
+Download the pretrained NTAR-GS model (trained on AID) from [Baidu Netdisk](https://pan.baidu.com/s/1gdT128vMcv8xtSJSA16pXA?pwd=68sc) and place `NTAR-GS.pth` in the project root directory.
 
-| Model | Training data | Checkpoint | Notes |
-| --- | --- | --- | --- |
-| NTAR-GS | AID | **[TO ADD DOWNLOAD LINK]** | Final checkpoint corresponding to the paper |
-
-Place the downloaded checkpoint at `checkpoints/epoch-best-test.pth`, or pass its path using `--model`.
+Extraction code: `68sc`
 
 **EDSR encoder initialization:** The supplied training configuration uses the EDSR baseline with 16 residual blocks, 64 features, `scale: 4`, and `no_upsampling: true`. For fresh training, `models/edsr.py` attempts to load `models/weights/edsr_baseline_x4-6b446fab.pt`. A separate link and proper attribution should be provided if this pretrained initialization is required by the released training recipe. The presence of `scale: 4` for the encoder initialization does **not** restrict the NTAR-GS reconstruction scale to ×4.
 
