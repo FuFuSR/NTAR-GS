@@ -29,9 +29,34 @@ git checkout bf697c8
 pip install -e ".[dev]"
 ```
 
-## Datasets
+## Dataset Preparation
 
-The experiments use **AID**, **DIOR**, **NWPU-RESISC45**, and **UC Merced**. Please obtain the datasets from their official providers and respect their respective terms of use. Dataset images are not distributed in this repository.
+请下载以下数据集：
+
+| 数据集 | 本文使用方式 |
+| --- | --- |
+| [AID](https://captain-whu.github.io/AID/) | 训练、验证和测试，分别使用 8,000、1,000 和 1,000 幅影像 |
+| [DIOR](https://gcheng-nwpu.github.io/#Datasets) | 跨数据集测试，使用 1,000 幅影像 |
+| [NWPU-RESISC45](https://gcheng-nwpu.github.io/#Datasets) | 跨数据集测试，使用 900 幅影像 |
+| [UC Merced](https://vision.ucmerced.edu/datasets/) | 真实影像无参考测试，使用 420 幅影像 |
+
+将 AID 放在项目根目录的 `AID/` 下，保留原始类别子目录，
+并将数据划分文件放在 `datasets/AID_split.json`。
+例如，图片路径为 `AID/Park/park_1.jpg`。
+
+在对应 YAML 配置的 `dataset.args` 中设置：
+
+```yaml
+root_path: ./AID
+split_file: ./datasets/AID_split.json
+split_key: train
+```
+
+训练、验证和测试分别使用 `train`、`val` 和 `test`。
+如果数据存放在其他位置，请修改 `root_path`。
+
+模拟 SR 实验中的 LR 影像由代码在线进行 Bicubic 下采样生成。
+其他数据集的路径和测试子集在相应测试配置中指定。
 
 ### AID
 
