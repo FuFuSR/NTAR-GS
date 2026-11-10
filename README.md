@@ -25,25 +25,12 @@ We propose NTAR-GS, a novel model for continuous-scale remote sensing image supe
 
 ### Environment
 
-- Linux
 - Python 3.9
 - PyTorch 1.13.1
 - torchvision 0.14.1
 - CUDA 11.7
 
 编译 gsplat 需要本机安装 CUDA 工具包（包含 nvcc）及兼容的 C++ 编译器。
-
-### Installation
-
-创建并激活 Conda 环境：
-
-```bash
-conda create -n ntargs python=3.9 -y
-conda activate ntargs
-python -m pip install "setuptools<70" wheel
-```
-
-下载 NTAR-GS：
 
 ```bash
 git clone https://github.com/FuFuSR/NTAR-GS.git
