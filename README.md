@@ -62,20 +62,11 @@ Set the dataset and split file paths in `configs/test/test.yaml`, then run the f
 python test.py --config configs/test/test.yaml --model NTAR-GS.pth --scales 4
 ```
 
-## Training
-
-The updated `train.py` supplied separately supports cosine annealing via `CosineAnnealingLR`. Once the **final, actually used** training YAML has been restored and the dataset paths are correct, launch training using:
+### Train
 
 ```bash
-python train.py \
-  --config configs/train/train-base-4.yaml \
-  --name ntargs_aid \
-  --gpu 0
+python train.py --config configs/train/train.yaml --name NTAR-GS-train
 ```
-
-Training outputs and checkpoints are written under `save/`. The training routine can produce `epoch-best.pth` and `epoch-last.pth`.
-
-> **[TO UPDATE]** The training YAML in the uploaded ZIP is an earlier experimental config (`epoch_max: 300`, `cosine_lr.T_max: 400`), and the `train.py` inside that ZIP does not implement the configured cosine scheduler. Replace the ZIP version with your separately supplied updated `train.py` and restore the YAML from the final training run. Do not label the included legacy YAML as the published training recipe.
 
 ## Results
 
