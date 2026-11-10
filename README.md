@@ -31,14 +31,14 @@ pip install -e ".[dev]"
 
 ## Dataset Preparation
 
-我们使用 AID、DIOR 和 NWPU-RESISC45 进行模拟实验，以原始影像作为 HR 参考，通过 Bicubic 下采样构建 LR/HR 影像对。UC Merced 用于真实世界实验，直接以原始影像作为输入，不施加任何模拟退化。请通过下方官方链接下载原始影像，也可使用自己的影像进行推理。
+We use AID, DIOR, and NWPU-RESISC45 for simulated SR experiments, treating the original images as HR references and generating corresponding LR images through bicubic downsampling. UC Merced is used for real-world experiments, with the original images directly used as inputs without any simulated degradation. Download the original images from the official links below, or use your own images for inference.
 
-| 数据集 | 实验用途 | 使用数量 |
+| Dataset | Usage | Number of images |
 | --- | --- | --- |
-| [AID](https://captain-whu.github.io/AID/) | 模拟实验：训练 / 验证 / 测试 | 8,000 / 1,000 / 1,000 |
-| [DIOR](https://gcheng-nwpu.github.io/#Datasets) | 模拟实验：跨数据集测试 | 1,000 |
-| [NWPU-RESISC45](https://gcheng-nwpu.github.io/#Datasets) | 模拟实验：跨数据集测试 | 900 |
-| [UC Merced](https://vision.ucmerced.edu/datasets/) | 真实影像无参考测试 | 420 |
+| [AID](https://captain-whu.github.io/AID/) | Simulated experiments: training / validation / testing | 8,000 / 1,000 / 1,000 |
+| [DIOR](https://gcheng-nwpu.github.io/#Datasets) | Simulated experiments: cross-dataset testing | 1,000 |
+| [NWPU-RESISC45](https://gcheng-nwpu.github.io/#Datasets) | Simulated experiments: cross-dataset testing | 900 |
+| [UC Merced](https://vision.ucmerced.edu/datasets/) | Real-world no-reference evaluation | 420 |
 
 ## Pretrained Models
 
