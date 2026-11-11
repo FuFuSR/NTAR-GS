@@ -1,0 +1,30 @@
+seed: 42
+
+test_dataset:
+  dataset:
+    name: image-folder
+    args:
+      root_path: ./AID
+      split_file: ./datasets/AID_split.json
+      split_key: test
+      repeat: 1
+      cache: none
+  wrapper:
+    name: sr-implicit-downsampled
+    args:
+      inp_size:
+      scale_min: 4
+      scale_max: 4
+      augment: false
+      batch_per_gpu: 1
+      random_crop: false
+      round_mode: round
+  batch_size: 1
+  num_workers: 0
+
+data_norm:
+  inp: {sub: [0.5], div: [0.5]}
+  gt: {sub: [0.5], div: [0.5]}
+
+multi_scale:
+  scales: [4]

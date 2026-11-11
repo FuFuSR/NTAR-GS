@@ -1,0 +1,102 @@
+seed: 42
+
+train_dataset:
+  dataset:
+    name: image-folder
+    args:
+      root_path: ./AID
+      split_file: ./datasets/AID_split.json
+      split_key: train
+      repeat: 1
+      cache: in_memory
+
+  wrapper:
+    name: sr-implicit-downsampled
+    args:
+      inp_size: 48
+      scale_min: 1
+      scale_max: 4
+      augment: true
+      batch_per_gpu: 8
+      random_crop: true
+      round_mode: round
+  batch_size: 8
+  num_workers: 0
+
+
+val_dataset:
+  dataset:
+    name: image-folder
+    args:
+      root_path: ./AID
+      split_file: ./datasets/AID_split.json
+      split_key: val
+      repeat: 1
+      cache: in_memory
+
+  wrapper:
+    name: sr-implicit-downsampled
+    args:
+      inp_size: null
+      scale_min: 4
+      scale_max: 4
+      augment: false
+      batch_per_gpu: 1
+      random_crop: false
+      round_mode: round
+  batch_size: 1
+  num_workers: 0
+
+
+data_norm:
+  inp: {sub: [0.5], div: [0.5]}
+  gt: {sub: [0.5], div: [0.5]}
+
+
+model:
+  name: td-ar-gs-sr
+  args:
+    encoder_spec:
+      name: edsr-baseline
+      args:
+        n_resblocks: 16
+        n_feats: 64
+        res_scale: 1
+        scale: 4
+        no_upsampling: true
+        rgb_range: 1
+    hidden_dim: 128
+    lattice_stride: 1
+    slots_l0: 1
+    out_dim: 3
+    rgb_activation: tanh
+    rgb_from_lr: true
+
+    ar_layers: 2
+    split_factor: 2
+
+
+loss:
+  primitive_topology_w: 0.0003
+  sr_gradient_w: 0.05
+
+optimizer:
+  name: adam
+  args:
+    lr: 0.0001
+  grad_clip: 1.0
+
+epoch_max: 1000
+epoch_save: 10
+epoch_val: 1
+
+cosine_lr:
+  T_max: 1000
+  eta_min: 1.0e-07
+
+  
+evaluation:
+  color_space: y
+  mod_scale: 4
+  crop: true
+  quantize: true
